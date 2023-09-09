@@ -1,8 +1,8 @@
 # Alchemy of Algorithms 🌟
 
-Welcome to the Alchemy of Algorithms. Here I try to document my journey of learning algorithms and data structures. I will be solving problems from leetcode mostly and I might sometimes write an article to support a question or to support a concept. I will be using JavaScript and Go for the most part. I will be using JavaScript for the most part because I am more comfortable with it and I will be using Go to learn a new language and to get a better understanding of how things work under the hood. I might usem python for some problems as well.
+Welcome to my Alchemy of Algorithms journey! This repo is my playground for learning and mastering algorithms and data structures. I'll be tackling problems primarily from LeetCode and may occasionally write articles to dive deeper into certain concepts.
 
-for a start, this repository is dedicated to only my needs. as I get comfortable with the process, I will try to make it more user friendly and make it useable and beneficial for others as well.
+For now, this is a one-man show aimed at my own growth. As I get more comfortable, I'll look into making this resource more accessible and beneficial for others.
 
 
 <!-- I will be using the following resources to learn algorithms and data structures: -->
@@ -33,7 +33,7 @@ for a start, this repository is dedicated to only my needs. as I get comfortable
 
 - JavaScript
 - Go
-- (More to come...)
+- Python (Maybe)
 
 ## Folder Structure 🗂
 
@@ -58,7 +58,13 @@ Alchemy of Algorithms/
 
 ## How to Run 🏃‍♂️
 
-Instructions on how to run the code snippets in different languages will be provided in the README files within each problem folder.
+Each problem folder will have a README with instructions on how to run the code snippets in different languages.
+
+TODO: devops concept will be implemented to make running the code as easy as possible. I promise it'll be a breeze. that is my own personal devops goal for this project.
 ## License 📝
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+
+## Acknowledgments 🙏
+my myself and I + Miorel Palii (for creating the code chronicles community) . hahaha!!!
