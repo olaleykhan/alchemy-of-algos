@@ -1,0 +1,1 @@
+console.log('global struct looks like this.');

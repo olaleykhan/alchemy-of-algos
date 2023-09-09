@@ -1,0 +1,9 @@
+{
+  "name": "alchemy-of-algos",
+  "version": "1.0.0",
+  "description": "init condition",
+  "main": "index.js",
+  "repository": "git@github.com:olaleykhan/alchemy-of-algos.git",
+  "author": "olalekan Abdulfatah",
+  "license": "MIT"
+}
