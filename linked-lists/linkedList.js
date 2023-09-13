@@ -1,129 +1,108 @@
 class Node {
-  constructor(value) {
-    this.value = value;
+  constructor(val) {
+    this.val = val;
     this.next = null;
   }
 }
 
 class LinkedList {
+  head = null;
+  tail = null;
+  length = 0;
 
 
-  constructor() {
-    this.head = null;
-    this.tail = null;
-    this.length = 0;
+  append(val) {
+    const newNode = new Node(val);
+    if (!this.head) {
+      this.head = newNode;
+      this.tail = this.head
+    } else {
+      this.tail.next = newNode;
+      this.tail = newNode
+    }
+    this.length++;
 
   }
 
   prepend(val) {
     const newNode = new Node(val);
+
     if (!this.head) {
       this.head = newNode;
-      this.tail = this.head;
+      this.tail = this.head
     } else {
       newNode.next = this.head;
-      this.head = newNode;
+      this.head = newNode
     }
     this.length++;
-  }
-
-  append(val) {
-    const newNode = new Node(val);
-    const temp = this.tail;
-    this.tail = newNode;
-    if (!this.head) {
-
-      this.head = newNode;
-    } else {
-      temp.next = newNode;
-    }
-    this.length++;
-  }
-
-  tranverse(index) {
-    if (!this.head || index >= this.length) {
-      console.log(null)
-      return null;
-    };
-
-    let currentNode = this.head;
-    let count = 0;
-    while (currentNode.value) {
-      if (count >= index) {
-        console.log(currentNode);
-        return currentNode
-      }
-      currentNode = currentNode.next;
-      count++;
-
-    }
-
   }
 
   insert(val, index) {
-
+    if (index === 0) {
+      return this.prepend(val);
+    }
     if (index >= this.length) {
       return this.append(val)
     }
-    if (index === 0) {
-      return this.prepend(value);
-    }
-
-
     const newNode = new Node(val);
-    const prevNode = this.tranverse(index - 1);
-    const temp = prevNode.next;
+    const prevNode = this.transverse(index - 1);
+    newNode.next = prevNode.next;
     prevNode.next = newNode;
-    newNode.next = temp;
-
     this.length++;
   }
 
   remove(index) {
-    if (this.length > 1) {
-      const prevNode = this.tranverse(index - 1);
-      const currNode = prevNode.next;
-      prevNode.next = currNode.next;
-      this.length--;
-    } else {
+    if (this.length <= 1) {
       this.length = 0;
       this.head = null;
       this.tail = null;
+      return;
     }
+    const prevNode = this.transverse(index - 1);
+    const unwanted = prevNode?.next;
+    prevNode.next = unwanted?.next;
+    this.length--;
   }
 
-  get(index) {
-    return this.tranverse(index);
-  }
+
 
   print() {
     console.log(this);
   }
 
-  reverse() {
-    const newList = new this.constructor()
-    let currentNode = this.head;
-    for (let i = 0; i < this.length; i++) {
-      newList.prepend(currentNode.value)
-      currentNode = currentNode.next;
-    }
-    this.head = newList.head;
-    this.tail = newList.tail;
-
+  get(index) {
+    console.log("value at index ", index, " is: ", this.transverse(index)?.val, `and the current length is ${this.length}`)
   }
 
+  transverse(index) {
+    // if (index === 0) {
+    //   return this.head
+    // }
+    if (index >= this.length - 1) {
+      return this.tail;
+    }
+
+    let currentNode = this.head;
+    let currentIndex = 0;
+
+    while (index > currentIndex) {
+      currentNode = currentNode?.next;
+      currentIndex++;
+    }
+    return currentNode;
+  }
 }
 
+
 const myLink = new LinkedList();
+myLink.get(0);
+myLink.append(1)
+myLink.append(2)
+myLink.append(3)
+myLink.prepend("start")
 
-myLink.prepend("middle")
-myLink.append("after middle");
-myLink.append("end");
-myLink.prepend("start");
-// myLink.tranverse(10);
-// myLink.tranverse(2);
+myLink.get(0);
+myLink.get(9)
 
-myLink.print();
-myLink.reverse();
-console.log("*********************************************");
+
 myLink.print();
