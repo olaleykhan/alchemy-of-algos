@@ -100,7 +100,17 @@ class LinkedList {
     console.log(this);
   }
 
+  reverse() {
+    const newList = new this.constructor()
+    let currentNode = this.head;
+    for (let i = 0; i < this.length; i++) {
+      newList.prepend(currentNode.value)
+      currentNode = currentNode.next;
+    }
+    this.head = newList.head;
+    this.tail = newList.tail;
 
+  }
 
 }
 
@@ -114,6 +124,6 @@ myLink.prepend("start");
 // myLink.tranverse(2);
 
 myLink.print();
-// myLink.reverse();
-// console.log("*********************************************");
-// myLink.print();
+myLink.reverse();
+console.log("*********************************************");
+myLink.print();
