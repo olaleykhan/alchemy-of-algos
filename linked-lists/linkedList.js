@@ -1,80 +1,119 @@
 class Node {
-  constructor(data) {
-    this.data = data;
+  constructor(value) {
+    this.value = value;
     this.next = null;
   }
 }
 
-// example of a node
-/*
-a node is always an object. containing it's data and it's pointer
+class LinkedList {
 
-{
-  head: 1,
-  tail:{
-    head:2
-    tail:{
-      head:3,
-      tail:null,
+
+  constructor() {
+    this.head = null;
+    this.tail = null;
+    this.length = 0;
+
+  }
+
+  prepend(val) {
+    const newNode = new Node(val);
+    if (!this.head) {
+      this.head = newNode;
+      this.tail = this.head;
+    } else {
+      newNode.next = this.head;
+      this.head = newNode;
+    }
+    this.length++;
+  }
+
+  append(val) {
+    const newNode = new Node(val);
+    const temp = this.tail;
+    this.tail = newNode;
+    if (!this.head) {
+
+      this.head = newNode;
+    } else {
+      temp.next = newNode;
+    }
+    this.length++;
+  }
+
+  tranverse(index) {
+    if (!this.head || index >= this.length) {
+      console.log(null)
+      return null;
+    };
+
+    let currentNode = this.head;
+    let count = 0;
+    while (currentNode.value) {
+      if (count >= index) {
+        console.log(currentNode);
+        return currentNode
+      }
+      currentNode = currentNode.next;
+      count++;
+
+    }
+
+  }
+
+  insert(val, index) {
+
+    if (index >= this.length) {
+      return this.append(val)
+    }
+    if (index === 0) {
+      return this.prepend(value);
+    }
+
+
+    const newNode = new Node(val);
+    const prevNode = this.tranverse(index - 1);
+    const temp = prevNode.next;
+    prevNode.next = newNode;
+    newNode.next = temp;
+
+    this.length++;
+  }
+
+  remove(index) {
+    if (this.length > 1) {
+      const prevNode = this.tranverse(index - 1);
+      const currNode = prevNode.next;
+      prevNode.next = currNode.next;
+      this.length--;
+    } else {
+      this.length = 0;
+      this.head = null;
+      this.tail = null;
     }
   }
-}
-*/
 
-
-/*
-
-const node1={
-  head:1,
-  tail:node2
-}
-
-const node2={
-  head:2,
-  tail: node3
-}
-
-const node3={
-  head:3,
-  tail:null
-}
-
-const linkedList = {
-  head: 0,
-  tail: node1
-}
-
-
-*/
-
-class LinkedList {
-  constructor(init) {
-    this.head = new Node(init);
-    this.tail = null;
-    this.size = 1;
+  get(index) {
+    return this.tranverse(index);
   }
 
-  append(data) {
-    console.log(data)
+  print() {
+    console.log(this);
   }
 
-  prepend(data) {
-    console.log(data)
-  }
-
-  insert(data, index) {
-    console.log(data, "is being inserted at index : ", index);
-  }
-
-  delete(index) {
-    console.log('deleting...... data at index:', index);
-  }
-
-  printList(data){
-
-  }
 
 
 }
 
-console.log(new Node(34));
+const myLink = new LinkedList();
+
+myLink.prepend("middle")
+myLink.append("after middle");
+myLink.append("end");
+myLink.prepend("start");
+// myLink.tranverse(10);
+// myLink.tranverse(2);
+
+myLink.print();
+// myLink.reverse();
+// console.log("*********************************************");
+// myLink.print();

@@ -5,5 +5,8 @@
   "main": "index.js",
   "repository": "git@github.com:olaleykhan/alchemy-of-algos.git",
   "author": "olalekan Abdulfatah",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "ts-node": "^10.9.1"
+  }
 }
