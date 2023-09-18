@@ -91,6 +91,23 @@ class LinkedList {
     }
     return currentNode;
   }
+
+  reverse() {
+    let prevNode = null;
+    let currentNode = this.head;
+    this.tail = currentNode;
+
+    while (currentNode !== null) {
+      const temp = currentNode.next;
+      currentNode.next = prevNode;
+      prevNode = currentNode;
+      currentNode = temp;
+
+    }
+    this.head = prevNode;
+  }
+
+
 }
 
 
@@ -101,8 +118,13 @@ myLink.append(2)
 myLink.append(3)
 myLink.prepend("start")
 
-myLink.get(0);
-myLink.get(9)
+
+// myLink.get(0);
+// myLink.get(9)
 
 
 myLink.print();
+myLink.prepend("ibere");
+myLink.print();
+// myLink.reverse();
+// myLink.print();
