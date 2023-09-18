@@ -14,7 +14,7 @@ function separateDigits(nums) {
   for (const num of nums) {
 
     for (const s of num.toString()) {
-      separatedDigits.push(s);
+      separatedDigits.push(Number(s));
     }
   }
 
@@ -24,6 +24,61 @@ function separateDigits(nums) {
 
 
 
-separateDigits([13, 25, 83, 77])
-separateDigits([7, 1, 3, 9])
-separateDigits([10921])
+// separateDigits([13, 25, 83, 77])
+// separateDigits([7, 1, 3, 9])
+// separateDigits([10921])
+
+
+// approach 2. get numerically using modulus.
+function separateDigits1(nums) {
+  let answer = [];
+
+  for (let n of nums) {
+    let temp = [];
+    // get the last digit at the end of the number
+    while (n > 0) {
+      temp.unshift(n % 10);
+      n = Math.floor(n / 10);
+    }
+    // append new array to current answer array
+    answer = answer.concat(temp)
+  }
+
+  console.log(answer);
+}
+
+
+
+// separateDigits1([13, 25, 83, 77])
+// separateDigits1([7, 1, 3, 9])
+// separateDigits1([10921])
+
+
+// APPROACH 3. I just discovered flat map and it'll certainly make the code more readable
+
+function separateDigits2(nums) {
+
+  console.log(nums.flatMap(getDigits))
+
+}
+
+function getDigits(num) {
+  const temp = [];
+
+  while (num > 0) {
+    temp.unshift(num % 10);
+    num = Math.floor(num / 10);
+  }
+  return temp;
+}
+
+// separateDigits2([13, 25, 83, 77])
+separateDigits([7, 1, 3, 9, 100])
+separateDigits1([7, 1, 3, 9, 100])
+separateDigits2([7, 1, 3, 9, 100])
+separateDigits([32, 43, 68, 8, 100, 84, 80, 14, 88, 42, 53, 98, 69, 64, 40, 60, 23, 99])
+separateDigits1([32, 43, 68, 8, 100, 84, 80, 14, 88, 42, 53, 98, 69, 64, 40, 60, 23, 99])
+separateDigits2([32, 43, 68, 8, 100, 84, 80, 14, 88, 42, 53, 98, 69, 64, 40, 60, 23, 99])
+// separateDigits2([10921])
+
+
