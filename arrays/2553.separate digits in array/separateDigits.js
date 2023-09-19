@@ -72,6 +72,7 @@ function getDigits(num) {
   return temp;
 }
 
+
 // separateDigits2([13, 25, 83, 77])
 separateDigits([7, 1, 3, 9, 100])
 separateDigits1([7, 1, 3, 9, 100])
@@ -82,3 +83,19 @@ separateDigits2([32, 43, 68, 8, 100, 84, 80, 14, 88, 42, 53, 98, 69, 64, 40, 60,
 // separateDigits2([10921])
 
 
+// Approach 4. falling forward numerically
+// here we get the left digit first and push instead of doing an unshift or a reverse pop
+// haha, the if you think about it, we really only have to refactor the getDigits
+
+// function separateDigits3(nums){
+
+// }
+
+// function getDigitsFarward(num){
+//   const  numLength = Math.floor(Math.log(num))+1;
+//   const divider = Math.pow(10, numLength -1);
+
+//   while(divisor >=1){
+//     temp.push(Math.floor(num//diviser))
+//   }
+// }
