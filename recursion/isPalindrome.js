@@ -21,3 +21,6 @@ console.log(isPalindrome("madam"))
 console.log(isPalindrome('palindrome'), 'palindrom')
 
 console.log(isPalindrome("racecar"), "racecar")
+
+console.log(isPalindrome(""), "")
+console.log(isPalindrome("k"), "k")
