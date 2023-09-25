@@ -13,9 +13,21 @@ function fib(n) {
   return fib(n - 1) + fib(n - 2);
 }
 
+// function memoizedFib(n, map = {}) {
+
+//   if (map[n] !== undefined) return map[n];
+//   if (n <= 2) return 1;
+
+//   map[n] = memoizedFib(n - 1, map) + memoizedFib(n - 2, map);
+
+//   return map[n];
+
+// }
+
+// commented line
 
 function cal(n) {
-  return console.log(`the fibonacci sequeence of ${n} is : `, fib(n));
+  return console.log(`the fibonacci sequeence of ${n} is : `, memoizedFib(n));
 }
 
 
