@@ -13,3 +13,8 @@ we look at 2 things when we are dealing with recursion:
 ## Problems\
 
 1. [Factorial](./factorial.js)
+<!-- 2. [Fibonacci](./fibonacci.js) -->
+3. [Sum of digits](./sumNaturalNumbers.js)
+4. [reverseString](./reverseString.js)
+6. [isPalindrome](./isPalindrome.js)
+
