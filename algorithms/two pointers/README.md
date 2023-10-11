@@ -7,7 +7,7 @@ Here, we shall solve multiple questions that primarily use the 2 pointers patter
 
 we shall be solving the following questions:
 
-1. [Valid palindrome](.125/valid-palindrome.js) [leetcode](https://leetcode.com/problems/valid-palindrome/description/)
+1. [Valid palindrome](125/valid-palindrome.js) [leetcode](https://leetcode.com/problems/valid-palindrome/description/)
 2. Pair with target sum
 3. Find Non-duplicate number instances (XOR)[^1]
 4. squaring a sorted array  link : https://leetcode.com/problems/squares-of-a-sorted-array/
