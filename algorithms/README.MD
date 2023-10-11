@@ -3,7 +3,7 @@ Two Pointers
 Sliding Window
 Fast and Slow Pointers
 Hash maps / Hash sets
-Recurssion
+Recursion
 Dynamic Programming (Basic & Advanced)
 Greedy Algorithms
 Divide and Conquer
@@ -23,6 +23,16 @@ Top 'K' Elements
 K-way Merge
 0/1 Knapsack (Dynamic Programming)
 Topological Sort (Graph)
+
+
+## more like structures
+```string
+Trie (useful for string manipulation problems)
+Graphs (Adjacency List, Adjacency Matrix)
+Union-Find (for set manipulation problems)
+Monotonic Stack/Queue (useful for problems like Next Greater Element)
+
+ ```
 
 
 
