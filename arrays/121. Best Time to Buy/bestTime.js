@@ -23,11 +23,12 @@ function bestTimetoTrade(prices) {
   let minPrice = Number.MAX_VALUE;
   let maxProfit = 0;
   for (const price of prices) {
+    const curr = price - minPrice;
 
-    if (price < minPrice) {
+    if (curr < 0) {
       minPrice = price;
-    } else if ((price - minPrice) > maxProfit) {
-      maxProfit = price - minPrice;
+    } else {
+      maxProfit = Math.max(maxProfit, curr)
     }
   }
   return maxProfit;
